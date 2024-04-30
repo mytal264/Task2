@@ -22,18 +22,10 @@ public class Property {
     }
     @Override
     public String toString() { // O(1)
-        String property = CITY_OF_PROPERTY.getCityName() + " - " + STREET_OF_PROPERTY + " "+PROPERTY_NUMBER+".\n"+TYPE_OF_PROPERTY;
-        if (IS_FOR_RENT) {
-            property += " - for rent: ";
-        } else {
-            property += " - for sale: ";
-        }
-        property += ROOMS + " rooms";
-        if (TYPE_OF_PROPERTY.equals("Regular apartment") || TYPE_OF_PROPERTY.equals("Penthouse")){
-            property += ", floor "+ FLOOR;
-        }
-        property += ".\nPrice: "+ PRICE +"$.\nContact info: "+ USER;
-        return property;
+        return CITY_OF_PROPERTY.getCityName() + " - " + STREET_OF_PROPERTY + " "+PROPERTY_NUMBER+".\n" +
+                TYPE_OF_PROPERTY + (IS_FOR_RENT ? " - for rent: " : " - for sale: ") + ROOMS + " rooms" +
+                (TYPE_OF_PROPERTY.equals("Regular apartment") || TYPE_OF_PROPERTY.equals("Penthouse") ?
+                        ", floor " + FLOOR : "") + ".\nPrice: "+ PRICE +"$.\nContact info: "+ USER;
     }
     public boolean equals (Property other){
         if (other!=null){

@@ -10,18 +10,12 @@ public class User {
         this.IS_BROKER =isBroker;
     }
     public String toString() { // O(1)
-        String user = USER_NAME +" "+ PHONE_NUMBER +" ";
-        if (IS_BROKER){
-            user += "(real estate broker).";
-        }else {
-            user += "(private person).";
-        }
-        return user;
+        return USER_NAME +" "+ PHONE_NUMBER +" "+ (this.isBroker() ? "(real estate broker)." : "(private person).");
     }
     public boolean equals(User other){ // O(1)
         if (other != null) {
             return this.USER_NAME.equals(other.USER_NAME);
-        } else return false;
+        } return false;
     }
     public String getUserName(){ // O(1)
         return USER_NAME;

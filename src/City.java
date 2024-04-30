@@ -6,7 +6,7 @@ public class City {
     private static final String[] CITIES_IN_CENTER = {"Tel Aviv","Holon"};
     private static final String[] CITIES_IN_SHARON = {"Raanana","Natanya"};
     private static final String[] CITIES_IN_NORTH = {"Heifa","Nahariya"};
-    private String CITY_NAME;
+    private final String CITY_NAME;
     private final String[] STREETS = {"Rothschild","Herzl","Bialik"};
     public City (int district,int city){
         this.DISTRICT = DISTRICTS[district];
@@ -16,6 +16,7 @@ public class City {
             case 2 -> this.CITY_NAME = CITIES_IN_CENTER[city];
             case 3 -> this.CITY_NAME = CITIES_IN_SHARON[city];
             case 4 -> this.CITY_NAME = CITIES_IN_NORTH[city];
+            default -> this.CITY_NAME="";
         }
     }
     public String toString(){ // O(1)

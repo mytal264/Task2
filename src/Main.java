@@ -2,13 +2,12 @@ public class Main {
     private static final int SIGN_UP = 1;
     private static final int LOG_IN = 2;
     private static final int END = 3;
-    private static final int NEW_POST = 1;
+    public static final int NEW_POST = 1;
     private static final int REMOVE_POST = 2;
     private static final int PRINT_ALL_PROPERTIES = 3;
     private static final int PRINT_USER_PROPERTIES = 4;
-    private static final int SEARCH = 5;
+    public static final int SEARCH = 5;
     private static final int LOG_OUT = 6;
-
     public static void main(String[] args) { // O(n)
         RealEstate realEstate=new RealEstate();
         int mainOption,secondaryOption;
